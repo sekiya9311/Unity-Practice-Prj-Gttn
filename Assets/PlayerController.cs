@@ -46,6 +46,6 @@ public class PlayerController : MonoBehaviour {
     private void Fly()
     {
         this.transform.position += vec3Dirs[dirsCnt].normalized * speedPerSecond * Time.deltaTime;
-        dirsCnt = (dirsCnt + 2) % 3;
+        dirsCnt = (dirsCnt + 1) % 3;
     }
 }
