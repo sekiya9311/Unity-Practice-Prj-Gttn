@@ -17,9 +17,7 @@ public class PlayerController : MonoBehaviour {
 	// Update is called once per frame
 	void Update ()
     {
-        //this.Buruburu();
-        //this.GoStraight();
-        this.Fly();
+        this.InputToMove();
 	}
 
     /// <summary>
@@ -47,5 +45,13 @@ public class PlayerController : MonoBehaviour {
     {
         this.transform.position += vec3Dirs[dirsCnt].normalized * speedPerSecond * Time.deltaTime;
         dirsCnt = (dirsCnt + 1) % 3;
+    }
+
+    private void InputToMove()
+    {
+        Vector3 moveDirection = Vector3.zero;
+        moveDirection.x = Input.GetAxis("Horizonnal");
+        moveDirection.z = Input.GetAxis("Vertical");
+        transform.position += moveDirection.normalized * speedPerSecond * Time.deltaTime;
     }
 }
