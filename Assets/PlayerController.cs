@@ -2,7 +2,8 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class PlayerController : MonoBehaviour {
+public class PlayerController : MonoBehaviour
+{
 
     [SerializeField] private float speedPerSecond = 2.0f;
     private int cntEven = 5;
@@ -10,12 +11,13 @@ public class PlayerController : MonoBehaviour {
     private int dirsCnt = 0;
 
     // Use this for initialization
-    void Start () {
-		
-	}
-    
-	// Update is called once per frame
-	void Update ()
+    void Start()
+    {
+
+    }
+
+    // Update is called once per frame
+    void Update()
     {
         this.InputToMove();
     }
