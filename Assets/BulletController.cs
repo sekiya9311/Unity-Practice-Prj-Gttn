@@ -6,6 +6,7 @@ public class BulletController : MonoBehaviour
 {
 
     [SerializeField] private float speedPerSecond = 3.0f;
+    [SerializeField] private float life = 5.0f;
 
     // Use this for initialization
     void Start()
@@ -17,5 +18,11 @@ public class BulletController : MonoBehaviour
     void Update()
     {
         transform.position += transform.forward * speedPerSecond * Time.deltaTime;
+        life -= Time.deltaTime;
+        if (life <= 0.0f)
+        {
+            Destroy(this.gameObject);
+            return;
+        }
     }
 }
