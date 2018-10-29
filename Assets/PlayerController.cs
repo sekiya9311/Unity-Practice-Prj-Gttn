@@ -18,7 +18,7 @@ public class PlayerController : MonoBehaviour {
 	void Update ()
     {
         this.InputToMove();
-	}
+    }
 
     /// <summary>
     /// どっか行きます
@@ -50,7 +50,7 @@ public class PlayerController : MonoBehaviour {
     private void InputToMove()
     {
         Vector3 moveDirection = Vector3.zero;
-        moveDirection.x = Input.GetAxis("Horizonnal");
+        moveDirection.x = Input.GetAxis("Horizontal");
         moveDirection.z = Input.GetAxis("Vertical");
         transform.position += moveDirection.normalized * speedPerSecond * Time.deltaTime;
     }
