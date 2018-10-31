@@ -2,6 +2,8 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+using System.Reflection;
+
 public class BulletController : MonoBehaviour
 {
 
@@ -23,6 +25,18 @@ public class BulletController : MonoBehaviour
         {
             Destroy(this.gameObject);
             return;
+        }
+    }
+
+    private void OnTriggerEnter(Collider other)
+    {
+        Debug.Log($"Call {MethodBase.GetCurrentMethod().Name}");
+        Debug.Log($"hit {other.tag}!!");
+
+        if (other.tag == "Enemy")
+        {
+            Destroy(other.gameObject);
+            Destroy(this.gameObject);
         }
     }
 }

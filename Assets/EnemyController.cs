@@ -8,7 +8,7 @@ public class EnemyController : MonoBehaviour
     [SerializeField] private float moveTime = 1.0f;
     [SerializeField] private float stopTime = 1.0f;
     private float timeCount = 0.0f;
-
+    
     // Use this for initialization
     void Start()
     {
